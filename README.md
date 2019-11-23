@@ -36,6 +36,20 @@ Input parameters of the Fibonacci NLFSR. <br>
 * The monomials to be shifted `M = [[1], [2], [1, 3]]` denotes monomials
 x1, x2 and x1x3.
 
+**Outputs:** <br>
+Output all the possible equivalent Galois NLFSRs. For example, one of
+the Galois NLFSR is represented by following parameters. <br>
+* The end positions the monomials are shifted to `BFTG = [3, 2, 3]`
+denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
+* The compensation list `CFTG = [-1, -1, -1, [1]]` (-1 represents 0 in Theorem 2) <br>
+* The feedback functions of the Galois NLFSR
+`FFGal = [[[1]], [[2]], [[3], [1]], [[0], [1, 3]]]` denotes <br>
+![figure](figures/fig_4.png) <br>
+* The output function of the Galois NLFSR `ZGal = [[3], [1]]` denotes <br>
+![figure](figures/fig_5.png) <br>
+* The initial state of the Galois NLFSR `N0Gal = [0, 0, 0, 1]` denotes <br>
+![figure](figures/fig_6.png)
+
 #### 2. Uniform_GTF.py
 The implementation of the Uniform_Galois-to-Fibonacci transformation algorithm
 for uniform NLFSRs proposed in Theorem 2. <br>
