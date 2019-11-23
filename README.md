@@ -1,7 +1,7 @@
 # Transformation Algorithms
 We implement three transformation algorithms proposed in Theorem 1, 2, 3, 4
 and run the code on the 256-bit Galois NLFSR in Espresso cipher, a 4-bit Fibonacci 
-NLFSR, 4-bit Galois NLFSR and respectively.
+NLFSR, 4-bit Galois NLFSR respectively.
 
 We also implement the comparison of Espresso, Espresso-a and Espresso-b, and the 
 comparison of Espresso, Espresso-F and Espresso-F2.
@@ -39,15 +39,15 @@ x1, x2 and x1x3.
 **Outputs:** <br>
 Output all the possible equivalent Galois NLFSRs. For example, one of
 the Galois NLFSR is represented by following parameters. <br>
-* The end positions the monomials are shifted to `BFTG = [3, 2, 3]`
+* The end positions the monomials are shifted to `BFTG = [3, 1, 2]`
 denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
-* The compensation list `CFTG = [-1, -1, -1, [1]]` (-1 represents 0 in Theorem 2) <br>
+* The compensation list `CFTG = [-1, -1, [[1]], [[2], [0, 1]]]` (-1 represents 0 in Theorem 2) <br>
 * The feedback functions of the Galois NLFSR
-`FFGal = [[[1]], [[2]], [[3], [1]], [[0], [1, 3]]]` denotes <br>
+`FFGal = [[[1]], [[2], [1]], [[3], [0, 1]], [[0], [1]]]` denotes <br>
 ![figure](figures/fig_4.png) <br>
-* The output function of the Galois NLFSR `ZGal = [[3], [1]]` denotes <br>
+* The output function of the Galois NLFSR `ZGal = [[0, 1], [3], [1], [2]]` denotes <br>
 ![figure](figures/fig_5.png) <br>
-* The initial state of the Galois NLFSR `N0Gal = [0, 0, 0, 1]` denotes <br>
+* The initial state of the Galois NLFSR `N0Gal = [0, 0, 1, 0]` denotes <br>
 ![figure](figures/fig_6.png)
 
 #### 2. Uniform_GTF.py
