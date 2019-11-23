@@ -1,8 +1,10 @@
 # Transformation Algorithms
-We implement three transformation algorithms proposed in Theorem 2, 3, 4
-and run the code on a 4-bit Fibonacci NLFSR, 4-bit Galois NLFSR and
-256-bit Galois NLFSR in Espresso cipher respectively.
-We also implement the comparison of Espresso, Espresso-a and Espresso-b.
+We implement three transformation algorithms proposed in Theorem 1, 2, 3, 4
+and run the code on the 256-bit Galois NLFSR in Espresso cipher, a 4-bit Fibonacci 
+NLFSR, 4-bit Galois NLFSR and respectively.
+
+We also implement the comparison of Espresso, Espresso-a and Espresso-b, and the 
+comparison of Espresso, Espresso-F and Espresso-F2.
 
 # Scripts
 Our algorithms are implemented in pure Python3, no any other
@@ -32,7 +34,7 @@ can be transformed by using Generalized_GTF.py as well. <br>
 
 #### 3. Generalized_FTG.py
 The implementation of the Fibonacci-to-Galois transformation algorithm
-proposed in Theorem 2. <br>
+proposed in Theorem 3. <br>
 
 For example, we transform a 4-bit Fibonacci NLFSR into all the possible
 equivalent Galois NLFSRs. <br>
@@ -67,10 +69,10 @@ denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
 
 #### 4. Generalized_GTF.py
 The implementation of the Galois-to-Fibonacci transformation algorithm
-proposed in Theorem 3. <br>
+proposed in Theorem 4. <br>
 
 The feedbakc functions of the input Galois NLFSR must satisfy
-equation (12) in the paper. We transform one of the Galois NLFSR in
+equation (14) in the paper. We transform one of the Galois NLFSR in
 the result of FTG.py back to the original Fibonacci NLFSR as an example. <br>
 **Inputs:** <br>
 Input parameters of the Galois NLFSR. <br>
