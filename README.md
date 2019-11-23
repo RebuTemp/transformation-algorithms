@@ -147,6 +147,6 @@ are from reference [DH17] in the paper.
 The parameters of Espresso-F2 are obtained from running Uniform_FTG.py on
 Espresso, which shows that the output function `FFGal_F2` of Espresso-F2 has 104
 variables and 7942 monomials. In the script, the parameter of the output
-function `ZGal_F2` and `ZGal_F2` reads from file ZGal_F2.txt and ZGal_F2.txt.<br>
+function `ZGal_F2` reads from file ZGal_F2.txt.<br>
 
 The result shows that Espresso cipher is equivalent to Espresso-F2 not Espresso-F.<br>
