@@ -13,7 +13,7 @@ Running them is pretty simple. For example, to run 'FTG.py' script, just
 open your terminal or IDE and type `python FTG.py`. All the input
 parameters are adjustable. More Details about these scripts are below.
 
-#### 1. FTG.py
+#### 1. Generalized_FTG.py
 The implementation of the Fibonacci-to-Galois transformation algorithm
 proposed in Theorem 2. <br>
 
@@ -48,7 +48,7 @@ denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
 * The initial state of the Galois NLFSR `N0Gal = [0, 0, 0, 1]` denotes <br>
 ![figure](figures/fig_6.png)
 
-#### 2. GTF.py
+#### 2. Generalized_GTF.py
 The implementation of the Galois-to-Fibonacci transformation algorithm
 proposed in Theorem 3. <br>
 
@@ -73,7 +73,7 @@ Output the transformed NLFSR which is a Fibonacci NLFSR. <br>
 * The output function of the Fibonacci NLFSR `ZFib = [[3]]`. <br>
 * The initial state of the Fibonacci NLFSR `N0Fib = [1, 1, 0, 0]`. <br>
         
-#### 3. GTF_uniform.py
+#### 3. Uniform_.py
 The implementation of the Galois-to-Fibonacci transformation algorithm
 for uniform NLFSRs proposed in Theorem 4. <br>
 
