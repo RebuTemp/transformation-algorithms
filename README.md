@@ -47,7 +47,7 @@ denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
 ![figure](figures/fig_4.png) <br>
 * The output function of the Galois NLFSR `ZGal = [[0, 1], [3], [1], [2]]` denotes <br>
 ![figure](figures/fig_5.png) <br>
-* The initial state of the Galois NLFSR `N0Gal = [0, 0, 1, 0]` denotes <br>
+* The initial state of the Galois NLFSR `N0Gal = [0, 0, 0, 1]` denotes <br>
 ![figure](figures/fig_6.png)
 
 #### 2. Uniform_GTF.py
