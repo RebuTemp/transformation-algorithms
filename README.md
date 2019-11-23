@@ -13,7 +13,24 @@ Running them is pretty simple. For example, to run 'FTG.py' script, just
 open your terminal or IDE and type `python FTG.py`. All the input
 parameters are adjustable. More Details about these scripts are below.
 
-#### 1. Generalized_FTG.py
+#### 2. Uniform_GTF.py
+The implementation of the Galois-to-Fibonacci transformation algorithm
+for uniform NLFSRs proposed in Theorem 2. <br>
+
+The input Galois NLFSR must be an uniform NLFSR which satisfy conditions
+in Definition 3.
+For example, we run the code on the 256-bit Galois NLFSR
+in Espresso cipher and successfully transform it into a LFSR with feedback
+function below. <br>
+![figure](figures/fig_7.png) <br>
+The corresponding output function and the initial state of the LFSR
+are output in the result. The length of the output function is the
+number of monomials in the function.  <br>
+
+To be noted, all the uniform Galois NLFSRs transformed in this script
+can be transformed by using Generalized_GTF.py as well. <br>
+
+#### 3. Generalized_FTG.py
 The implementation of the Fibonacci-to-Galois transformation algorithm
 proposed in Theorem 2. <br>
 
@@ -48,7 +65,7 @@ denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
 * The initial state of the Galois NLFSR `N0Gal = [0, 0, 0, 1]` denotes <br>
 ![figure](figures/fig_6.png)
 
-#### 2. Generalized_GTF.py
+#### 4. Generalized_GTF.py
 The implementation of the Galois-to-Fibonacci transformation algorithm
 proposed in Theorem 3. <br>
 
@@ -73,24 +90,7 @@ Output the transformed NLFSR which is a Fibonacci NLFSR. <br>
 * The output function of the Fibonacci NLFSR `ZFib = [[3]]`. <br>
 * The initial state of the Fibonacci NLFSR `N0Fib = [1, 1, 0, 0]`. <br>
         
-#### 3. Uniform_.py
-The implementation of the Galois-to-Fibonacci transformation algorithm
-for uniform NLFSRs proposed in Theorem 4. <br>
-
-The input Galois NLFSR must be an uniform NLFSR which satisfy conditions
-in Definition 2.
-For example, we run the code on the 256-bit Galois NLFSR
-in Espresso cipher and successfully transform it into a LFSR with feedback
-function below. <br>
-![figure](figures/fig_7.png) <br>
-The corresponding output function and the initial state of the LFSR
-are output in the result. The length of the output function is the
-number of monomials in the function.  <br>
-
-To be noted, all the uniform Galois NLFSRs transformed in this script
-can be transformed by using GTF.py as well. <br>
-
-#### 4. Espresso_a_b.py
+#### 5. Espresso_a_b.py
 Compare the output sequence of the Espresso, Espresso-a and Espresso-b. <br> 
 
 The feedback functions `FFGal_a`and output function `ZGal_a` of the Espresso-a
@@ -101,3 +101,15 @@ variables and 1988 monomials. In the script, the parameter of the output
 function `ZGal_b` reads from file ZGal_b.txt.<br>
 
 The result shows that Espresso cipher is equivalent to Espresso-b not Espresso-a.<br>
+
+#### 6. Espresso_F_F2.py
+Compare the output sequence of the Espresso, Espresso-F and Espresso-F2. <br> 
+
+The feedback functions `FFGal_F`and output function `ZGal_F` of the Espresso-F
+are from reference [DH17] in the paper.
+The parameters of Espresso-F2 are obtained from running Uniform_FTG.py on
+Espresso, which shows that the output function `FFGal_F2` of Espresso-F2 has 104
+variables and 7942 monomials. In the script, the parameter of the output
+function `ZGal_F2` and `ZGal_F2` reads from file ZGal_F2.txt and ZGal_F2.txt.<br>
+
+The result shows that Espresso cipher is equivalent to Espresso-F2 not Espresso-F.<br>
