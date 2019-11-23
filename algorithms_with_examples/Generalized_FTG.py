@@ -1,5 +1,5 @@
 """
-The implementation of the Fibonacci-to-Galois transformation algorithm we propose in Theorem 2.
+The implementation of the Generalized_Fibonacci-to-Galois transformation algorithm we propose in Theorem 3.
 """
 
 import copy
@@ -317,7 +317,7 @@ Z = [[3]]
 N0 = []
 for i in range(n):
     N0.append(random.randint(0, 1))
-
+N0 = [0, 0, 0, 1]
 print('FFFib = ', FF)
 print('ZFib = ', Z)
 print('N0Fib = ', N0)
@@ -335,7 +335,7 @@ for i in range(len(B)):
     BAll.append(BTemp)
 BAll = list(itertools.product(*BAll))
 BAll = [list(e) for e in BAll]
-
+print('BAll =', BAll)
 # For each combination of possible positions, we transform the Fibonacci NLFSR to a Galois NLFSR
 for i in range(len(BAll)):
     FFFib = copy.deepcopy(FF)

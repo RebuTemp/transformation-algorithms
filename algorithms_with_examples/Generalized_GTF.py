@@ -1,6 +1,6 @@
 """
-The implementation of the Galois-to-Fibonacci transformation algorithm for uniform NLFSRs we propose in Theorem 4.
-"""
+The implementation of the Generalized_Galois-to-Fibonacci transformation algorithm we propose in Theorem 4.
+""" 
 
 import copy
 import random
@@ -80,7 +80,7 @@ def Gal_NLFSR(R, FF, ZF, N0):
     states: list
         internal state for each round
     """
-
+    
     N = copy.deepcopy(N0)
     states, outputs = [], []
     for i in range(R):
@@ -114,10 +114,10 @@ def Gal_NLFSR(R, FF, ZF, N0):
     return outputs, states
 
 
-def sort_function(FF):
+def sort_function(FF): 
     """Remove all duplicate monomials in the feedback functions FF.
     """
-
+    
     FF_Sort = []
     for i in range(len(FF)):  # For each feedback function in FF
         tempx = FF[i]
@@ -149,7 +149,7 @@ def compensation_list_GTF(FF, n):
     B : list
         position where the monomial is shifted from
     """
-
+    
     FFTemp = copy.deepcopy(FF)
     Compen = [-1] * n
     MGal = []
@@ -182,8 +182,7 @@ def compensation_list_GTF(FF, n):
 
 
 def compensation_GTF(FF, CompenAll, CompenPosition, n):
-    """Construct the feedback functions for the Fibonacci NLFSR,
-    only shifting process is needed so we comment out the compensation process
+    """Compensate the feedback functions
     Parameters
     ----------
     FF : list
@@ -199,7 +198,7 @@ def compensation_GTF(FF, CompenAll, CompenPosition, n):
     FFAll : list
         feedback functions after compensation
     """
-
+    
     FFAll = copy.deepcopy(FF)
     i = CompenPosition + 1
     for j in range(n):
@@ -207,17 +206,17 @@ def compensation_GTF(FF, CompenAll, CompenPosition, n):
         for k in range(len(FFAll[j])):
             if FFAll[j][k] == [(j + 1) % n]:
                 continue
-            FFjk = copy.deepcopy(FFAll[j][k])
+            FFjk = copy.deepcopy(FFAll[j][k])  # FFjk = [2, 3]
             if i in FFjk:
                 if FFjk in FFj:
                     FFj.remove(FFjk)
-                # if len(FFAll[j][k]) == 1:
-                    # temp = copy.deepcopy(CompenAll[i])
-                # else:
-                    # FFjk = copy.deepcopy(FFAll[j][k])
-                    # FFjk.remove(i)
-                    # temp = list(map(lambda x: list(set(x+FFjk)), CompenAll[i]))
-                # FFj = FFj + temp
+                if len(FFAll[j][k]) == 1:
+                    temp = copy.deepcopy(CompenAll[i])
+                else:
+                    FFjk = copy.deepcopy(FFAll[j][k])
+                    FFjk.remove(i)
+                    temp = list(map(lambda x: list(set(x+FFjk)), CompenAll[i]))
+                FFj = FFj + temp
         FFAll[j] = copy.deepcopy(FFj)
     FFAll = sort_function(FFAll)
 
@@ -237,7 +236,7 @@ def compensation_Fz(Z, CBackw):
     ZCompenBackw : list
         output function of the Fibnocci NLFSR
     """
-
+    
     ZCompenBackw = []
     for i in range(len(Z)):
         Zi = copy.deepcopy(Z[i])  # Zi = [6, 4]
@@ -246,12 +245,12 @@ def compensation_Fz(Z, CBackw):
             if CBackw[Zi[j]] != -1:
                 Zi_temp.append(CBackw[Zi[j]])
             else:
-                Zi_temp.append([[Zi[j]]])
-        Zi_temp = list(itertools.product(*Zi_temp))
+                Zi_temp.append([[Zi[j]]]) 
+        Zi_temp = list(itertools.product(*Zi_temp)) 
         Zi_temp = [list(e) for e in Zi_temp]
         for j in range(len(Zi_temp)):
             Zi_temp[j] = [item for sublist in Zi_temp[j] for item in sublist]
-            Zi_temp[j] = list(set(Zi_temp[j]))
+            Zi_temp[j] = list(set(Zi_temp[j])) 
         ZCompenBackw = ZCompenBackw + Zi_temp
     ZCompenBackw = sort_function([ZCompenBackw])
     ZCompenBackw = ZCompenBackw[0]
@@ -274,7 +273,7 @@ def compute_IV_GTF(N0, Compen, n):
     N0Gal : list
         initial state of the Galois NLFSR, for example, [1, 0, 1, 1]
     """
-
+    
     N0GalComp = copy.deepcopy(N0)
     CompenTemp = copy.deepcopy(Compen)
     for i in range(n):
@@ -292,34 +291,15 @@ def compute_IV_GTF(N0, Compen, n):
 
 # ============================== An example below ==============================
 # The size of the NLFSR
-n = 256
+n = 4
 # The number of rounds you want to run the NLFSR (The length of output sequence)
 R = 1000
 
-# The feedback functions of the Galois NLFSR in Espresso cipher
-FFGal = []
-for i in range(n):
-    f = []
-    f.insert(0, [(i + 1) % n])
-    FFGal.append(f)
-FFGal[193] = [[194], [12, 121]]
-FFGal[197] = [[198], [29, 52, 72, 99]]
-FFGal[201] = [[202], [8, 103]]
-FFGal[205] = [[206], [5, 80]]
-FFGal[209] = [[210], [6, 64]]
-FFGal[213] = [[214], [4, 45]]
-FFGal[217] = [[218], [3, 32]]
-FFGal[231] = [[232], [50, 159], [189]]
-FFGal[235] = [[236], [67, 90, 110, 137]]
-FFGal[239] = [[240], [46, 141], [117]]
-FFGal[243] = [[244], [43, 118], [103]]
-FFGal[247] = [[248], [44, 102], [40]]
-FFGal[251] = [[252], [42, 83], [8]]
-FFGal[255] = [[0], [41, 70]]
+# The feedback functions of the Galois NLFSR
+FFGal = [[[1]], [[2]], [[3], [1]], [[0], [1, 3]]]
 
 # The output function of the Galois NLFSR
-ZGal = [[80], [99], [137], [227], [222], [187], [243, 217], [247, 231], [213, 235],
-        [255, 251], [181, 239], [174, 44], [164, 29], [255, 247, 243, 213, 181, 174]]
+ZGal = [[3], [1]]
 
 # Generate a random initial state for the Galois NLFSR
 N0Gal = []
@@ -328,11 +308,14 @@ for i in range(n):
 
 OutGal, StatesGal = Gal_NLFSR(R, FFGal, ZGal, N0Gal)
 
-# Step 1: construct compensation list and feedback fucntions for the Fibonacci NLFSR
+# Transform the Galois NLFSR into a Fibonacci NLFSR
+# Step 1: Let the combined compensation list equal to [0, ..., 0]. Here, we use -1 instead 0
 CompenAll = [-1] * n
 MFib = []
 MGalAll = []
 BAll = []
+
+# Step 2, Step 3 and Step 4 in Theorem 3
 for x in range(n - 1):
     Compen, MGal, B = compensation_list_GTF(FFGal, n)
     for i in range(len(B)):
@@ -363,23 +346,22 @@ FFGal[-1] = FFGal[-1] + MFib
 FFGal = sort_function(FFGal)
 FFFib = copy.deepcopy(FFGal)
 
-# Step 2: Compensate the output function by using compensation list
+# Step 5: Compensate the output function by using compensation list
 ZFib = compensation_Fz(ZGal, CompenAll)
 
-# Step 3: Compute the initial state for the Fibonacci NLFSR
+# Step 6: Compute the initial state for the Fibonacci NLFSR
 N0Fib = compute_IV_GTF(N0Gal, CompenAll, n)
 
 OutFib, StatesFib = Fib_NLFSR(R, FFFib, ZFib, N0Fib)
 
 if OutGal == OutFib:
-    print('Transformation from Galois NLFSR in Espresso to Fibonacci NLFSR succeeds!')
+    print('Transformation from Galois NLFSR to Fibonacci NLFSR succeeds!')
     print('Feedback functions of the Galois NLFSR are: ', FFGal)
     print('Output function of the Galois NLFSR is: ', ZGal)
     print('Initial state of the Galois NLFSR is: ', N0Gal)
     print('The combined compensation list is: ', CompenAll)
     print('Feedback functions of the Fibonacci NLFSR are: ', FFFib)
     print('Output function of the Fibonacci NLFSR is: ', ZFib)
-    print('The number of monomials in the filter function is: ', len(ZFib))
     print('Initial state of the Galois NLFSR is: ', N0Fib)
 else:
     print('Fail!')
