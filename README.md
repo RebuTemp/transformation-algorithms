@@ -1,6 +1,7 @@
 # Transformation Algorithms
-We implement three transformation algorithms proposed in Theorem 1, 2, 3, 4
-and run the code on the 256-bit Galois NLFSR in Espresso cipher, a 4-bit Fibonacci 
+We implement four transformation algorithms proposed in Theorem 1, 2, 3, 4 
+and run the code on a 4-bit Fibonacci 
+NLFSR, the 256-bit Galois NLFSR in Espresso cipher, another 4-bit Fibonacci 
 NLFSR, 4-bit Galois NLFSR respectively.
 
 We also implement the comparison of Espresso, Espresso-a and Espresso-b, and the 
