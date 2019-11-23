@@ -26,21 +26,21 @@ Input parameters of the Fibonacci NLFSR. <br>
 * The size of the Fibonacci NLFSR `n = 4`.
 * The number of rounds to run the NLFSR `R = 1000`.
 * The feedback functions of the Fibonacci NLFSR
-`F = [[[1]], [[2]], [[3]], [[0], [1], [2], [1, 3]]]` denotes <br>
+`F = [[[1]], [[2]], [[3]], [[0], [1], [3], [1, 2]]]` denotes <br>
 ![figure](figures/fig_1.png) <br>
 * The output function of the Fibonacci NLFSR `Z = [[3]]` denotes <br>
 ![figure](figures/fig_2.png) <br>
 * The randomly generated initial state of the Fibonacci NLFSR such as
 `N0 = [0, 0, 0, 1]` denotes <br>
 ![figure](figures/fig_3.png) <br>
-* The monomials to be shifted `M = [[1], [2], [1, 3]]` denotes monomials
-x1, x2 and x1x3.
+* The monomials to be shifted `M = [[1], [3], [1, 2]]` denotes monomials
+x1, x3 and x1x2.
 
 **Outputs:** <br>
 Output all the possible equivalent Galois NLFSRs. For example, one of
 the Galois NLFSR is represented by following parameters. <br>
 * The end positions the monomials are shifted to `BFTG = [3, 1, 2]`
-denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
+denote that x1 is not shifted, x2 is shifted to f2. <br>
 * The compensation list `CFTG = [-1, -1, [[1]], [[2], [0, 1]]]` (-1 represents 0 in Theorem 2) <br>
 * The feedback functions of the Galois NLFSR
 `FFGal = [[[1]], [[2], [1]], [[3], [0, 1]], [[0], [1]]]` denotes <br>
