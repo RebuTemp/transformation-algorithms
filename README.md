@@ -11,12 +11,33 @@ Our algorithms are implemented in pure Python3, no any other
 dependencies are required. There are four scripts in the directory
 of 'algorithms_with_examples' and all these scripts can be executed independently.
 
-Running them is pretty simple. For example, to run 'FTG.py' script, just
-open your terminal or IDE and type `python FTG.py`. All the input
+Running them is pretty simple. For example, to run 'Uniform_FTG.py' script, just
+open your terminal or IDE and type `python Uniform_FTG.py`. All the input
 parameters are adjustable. More Details about these scripts are below.
 
+#### 1. Uniform_FTG.py
+The implementation of the Uniform_Fibonacci-to-Galois transformation algorithm
+proposed in Theorem 1. <br>
+
+For example, we transform a 4-bit Fibonacci NLFSR into all the possible
+uniform Galois NLFSRs. <br>
+**Inputs:** <br>
+Input parameters of the Fibonacci NLFSR. <br>
+* The size of the Fibonacci NLFSR `n = 4`.
+* The number of rounds to run the NLFSR `R = 1000`.
+* The feedback functions of the Fibonacci NLFSR
+`F = [[[1]], [[2]], [[3]], [[0], [1], [2], [1, 3]]]` denotes <br>
+![figure](figures/fig_1.png) <br>
+* The output function of the Fibonacci NLFSR `Z = [[3]]` denotes <br>
+![figure](figures/fig_2.png) <br>
+* The randomly generated initial state of the Fibonacci NLFSR such as
+`N0 = [0, 0, 0, 1]` denotes <br>
+![figure](figures/fig_3.png) <br>
+* The monomials to be shifted `M = [[1], [2], [1, 3]]` denotes monomials
+x1, x2 and x1x3.
+
 #### 2. Uniform_GTF.py
-The implementation of the Galois-to-Fibonacci transformation algorithm
+The implementation of the Uniform_Galois-to-Fibonacci transformation algorithm
 for uniform NLFSRs proposed in Theorem 2. <br>
 
 The input Galois NLFSR must be an uniform NLFSR which satisfy conditions
@@ -33,7 +54,7 @@ To be noted, all the uniform Galois NLFSRs transformed in this script
 can be transformed by using Generalized_GTF.py as well. <br>
 
 #### 3. Generalized_FTG.py
-The implementation of the Fibonacci-to-Galois transformation algorithm
+The implementation of the Generalized_Fibonacci-to-Galois transformation algorithm
 proposed in Theorem 3. <br>
 
 For example, we transform a 4-bit Fibonacci NLFSR into all the possible
@@ -68,7 +89,7 @@ denote that x1 and x1x3 are not shifted, x2 is shifted to f2. <br>
 ![figure](figures/fig_6.png)
 
 #### 4. Generalized_GTF.py
-The implementation of the Galois-to-Fibonacci transformation algorithm
+The implementation of the Generalized_Galois-to-Fibonacci transformation algorithm
 proposed in Theorem 4. <br>
 
 The feedbakc functions of the input Galois NLFSR must satisfy
