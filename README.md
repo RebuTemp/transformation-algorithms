@@ -72,7 +72,7 @@ can be transformed by using Generalized_GTF.py as well. <br>
 Compare the output sequence of the Espresso, Espresso-a and Espresso-b. <br> 
 
 The feedback functions `FFGal_a`and output function `ZGal_a` of the Espresso-a
-are from reference [WL17] in the paper.
+are from reference [17] in the paper.
 The parameters of Espresso-b are obtained from running Uniform_GTF.py and Uniform_FTG.py on
 Espresso, which shows that the output function `FFGal_b` of Espresso-b has 104
 variables and 1988 monomials. In the script, the parameter of the output
@@ -84,7 +84,7 @@ The result shows that Espresso cipher is equivalent to Espresso-b not Espresso-a
 Compare the output sequence of the Espresso, Espresso-F and Espresso-F2. <br> 
 
 The feedback functions `FFGal_F`and output function `ZGal_F` of the Espresso-F
-are from reference [DH17] in the paper.
+are from reference [3] in the paper.
 The parameters of Espresso-F2 are obtained from running Uniform_FTG.py on
 Espresso, which shows that the output function `FFGal_F2` of Espresso-F2 has 104
 variables and 7942 monomials. In the script, the parameter of the output
