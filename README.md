@@ -16,7 +16,7 @@ open your terminal or IDE and type `python Uniform_FTG.py`. All the input
 parameters are adjustable. More Details about these scripts are below.
 
 #### 1. Uniform_FTG.py
-The implementation of the Uniform_Fibonacci-to-Galois transformation algorithm
+The implementation of the Fibonacci-to-Type-II transformation algorithm
 proposed in Theorem 1. <br>
 
 For example, we transform a 4-bit Fibonacci NLFSR into all the possible
@@ -51,7 +51,7 @@ denote that x1 is not shifted, x3 is shifted to f1 and x1x2 is shifted to f2. <b
 ![figure](figures/fig_6.png)
 
 #### 2. Uniform_GTF.py
-The implementation of the Uniform_Galois-to-Fibonacci transformation algorithm
+The implementation of the Type-II-to-Fibonacci transformation algorithm
 for uniform NLFSRs proposed in Theorem 2. <br>
 
 The input Galois NLFSR must be an uniform NLFSR which satisfy conditions
