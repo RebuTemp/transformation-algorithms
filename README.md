@@ -1,6 +1,6 @@
 # Transformation Algorithms
-We implement two transformation algorithms proposed in Theorem 1, 2
-and run the code on a 4-bit Fibonacci 
+We implement two transformation algorithms including Fibonacci-to-Type-II and 
+Type-II-to-Fibonacci and run the code on a 4-bit Fibonacci 
 NLFSR and the 256-bit Galois NLFSR in Espresso cipher respectively.
 
 We also implement the comparison of Espresso, Espresso-a and Espresso-b, and the 
@@ -71,7 +71,7 @@ can be transformed by using Generalized_GTF.py as well. <br>
 Compare the output sequence of the Espresso, Espresso-a and Espresso-b. <br> 
 
 The feedback functions `FFGal_a`and output function `ZGal_a` of the Espresso-a
-are from reference [17] in the paper.
+are from reference [16] in the paper.
 The parameters of Espresso-b are obtained from running Uniform_GTF.py and Uniform_FTG.py on
 Espresso, which shows that the output function `FFGal_b` of Espresso-b has 104
 variables and 1988 monomials. In the script, the parameter of the output
@@ -83,7 +83,7 @@ The result shows that Espresso cipher is equivalent to Espresso-b not Espresso-a
 Compare the output sequence of the Espresso, Espresso-F and Espresso-F2. <br> 
 
 The feedback functions `FFGal_F`and output function `ZGal_F` of the Espresso-F
-are from reference [3] in the paper.
+are from reference [2] in the paper.
 The parameters of Espresso-F2 are obtained from running Uniform_FTG.py on
 Espresso, which shows that the output function `FFGal_F2` of Espresso-F2 has 104
 variables and 7942 monomials. In the script, the parameter of the output
