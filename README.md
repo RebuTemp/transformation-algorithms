@@ -38,7 +38,7 @@ Output all the possible equivalent Galois NLFSRs. For example, one of
 the Galois NLFSR is represented by following parameters. <br>
 * The end positions the monomials are shifted to `BFTG = [3, 1, 2]`
 denote that x1 is not shifted, x3 is shifted to f1 and x1x2 is shifted to f2. <br>
-* The compensation list `CFTG = [-1, -1, [[1]], [[2], [0, 1]]]` (-1 represents 0 in Theorem 1) <br>
+* The compensation list `CFTG = [-1, -1, [[1]], [[2], [0, 1]]]` (-1 represents 0 in the description of the algorithm) <br>
 * The feedback functions of the Galois NLFSR
 `FFGal = [[[1]], [[2], [1]], [[3], [0, 1]], [[0], [1]]]` denotes <br>
 ![figure](figures/fig_10.png) <br>
