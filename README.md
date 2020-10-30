@@ -62,4 +62,5 @@ Output the original Galois NLFSR and the equivalent Fibonacci NLFSRs. <br>
 * Feedback functions of the Fibonacci NLFSR are:  [[[1]], [[2]], [[3]], [[0], [1], [3], [1, 2]]] <br>
 * Output function of the Fibonacci NLFSR is:  [[2, 3]]
 * Initial state of the Fibonacci NLFSR is:  [0, 1, 1, 1] <br>
+
 The Galois NLFSR is transformed back to the Fibonacci NLFSR in Fibonacci-to-Type-II.py. <br>
